@@ -1,0 +1,17 @@
+version: '3.8'
+
+networks:
+  mi_subnet:
+    ipam:
+      config:
+        - subnet: 172.10.10.0/24
+
+services:
+  mi_contenedor:
+    build:
+      context: ./Prueba
+      dockerfile: dockerfile
+    container_name: prueba
+    networks:
+      mi_subnet:
+        ipv4_address: 172.10.10.2
