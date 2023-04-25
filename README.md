@@ -64,27 +64,21 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## 🔧 Running the tests <a name = "tests"></a>
 
-Explain how to run the automated tests for this system.
+Para hacer pruebas de que se ha instalado correctamente podemos ver si se han generado contenedores o imagenes.
 
-### Break down into end to end tests
-
-Explain what these tests test and why
+### Comprobar si se han generado Contenedores o imagenes
 
 ```
-Give an example
+docker ps -a
+docker images
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+Si tenemos contenedores con el "status" en "running" significa que se puede continuar con los retos CTF en caso contrario revisar la instalación.
 
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+Una vez instalado el proyecto y puesto en marcha la idea es intentar conseguir todas las "flags" posibles mediante nuestras habilidades de "hacking". Para ello se pueden usar las distitas Ips de los contenedores, voy a dejar un esquema indicando las ips de los diferentes contenedores y su titulo.
+
+<img width=300px height=400px src="./Images/docker.png" alt="Project logo"></a>
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
