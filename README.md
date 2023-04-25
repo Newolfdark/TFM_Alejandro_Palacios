@@ -24,7 +24,7 @@
 - [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
+- [TODO](#todo)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
@@ -59,8 +59,6 @@ cd TFM_Alejandro_Palacios
 docker-composer up -d
 ```
 
-End with an example of getting some data out of the system or using it for a little demo.
-
 ## 🔧 Running the tests <a name = "tests"></a>
 
 Para hacer pruebas de que se ha instalado correctamente podemos ver si se han generado contenedores o imagenes.
@@ -75,9 +73,13 @@ Si tenemos contenedores con el "status" en "running" significa que se puede cont
 
 ## 🎈 Usage <a name="usage"></a>
 
-Una vez instalado el proyecto y puesto en marcha la idea es intentar conseguir todas las "flags" posibles mediante nuestras habilidades de "hacking". Para ello se pueden usar las distitas Ips de los contenedores, voy a dejar un esquema indicando las ips de los diferentes contenedores y su titulo.
+Una vez instalado el proyecto y puesto en marcha la idea es intentar conseguir todas las "flags" posibles mediante nuestras habilidades de "hacking". Para ello se pueden usar las distitas Ips de los contenedores, voy a dejar un esquema indicando las ips de los diferentes contenedores y su título.
 
 <img width=300px height=450px src="./Images/docker.png" alt="Project logo"></a>
+
+## 👨‍🏭 TODO <a name = "built_using"></a>
+
+Por ahora falta confirmación del proyecto y continuar con una serie de retos que incluirían exploits muy conocidos como puede ser el Eternal Blue entre otros.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
