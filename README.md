@@ -78,7 +78,7 @@ Si tenemos contenedores con el "status" en "running" significa que se puede cont
 
 Una vez instalado el proyecto y puesto en marcha la idea es intentar conseguir todas las "flags" posibles mediante nuestras habilidades de "hacking". Para ello se pueden usar las distitas Ips de los contenedores, voy a dejar un esquema indicando las ips de los diferentes contenedores y su titulo.
 
-<img width=300px height=400px src="./Images/docker.png" alt="Project logo"></a>
+<img width=300px height=450px src="./Images/docker.png" alt="Project logo"></a>
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
