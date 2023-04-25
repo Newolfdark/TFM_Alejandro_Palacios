@@ -48,7 +48,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-## Deployment <a name = "Deployment"></a>
+## 🚀 Deployment <a name = "deployment"></a>
 
 Para tener el proyecto en el sistema tan solo hay que estar en el directorio del repositorio y ejecutar el docker-composer
 
@@ -80,10 +80,6 @@ Una vez instalado el proyecto y puesto en marcha la idea es intentar conseguir t
 
 <img width=300px height=450px src="./Images/docker.png" alt="Project logo"></a>
 
-## 🚀 Deployment <a name = "deployment"></a>
-
-Add additional notes about how to deploy this on a live system.
-
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [Docker](https://www.docker.com/) - Containers
@@ -92,8 +88,6 @@ Add additional notes about how to deploy this on a live system.
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@newofldark](https://github.com/newolfdark) - Idea & Initial work
-
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
