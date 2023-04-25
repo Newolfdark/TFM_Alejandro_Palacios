@@ -9,9 +9,9 @@ networks:
 services:
   mi_contenedor:
     build:
-      context: ./Prueba
+      context: ./CTF1
       dockerfile: dockerfile
-    container_name: prueba
+    container_name: ctf1
     networks:
       mi_subnet:
         ipv4_address: 172.10.10.2

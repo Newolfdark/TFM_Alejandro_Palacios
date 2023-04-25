@@ -1,17 +1,25 @@
-FROM ubuntu:latest
-RUN apt-get update
+FROM ubuntu:20.04
 
-RUN useradd -d /home/ctf/ -m -p ctf -s /bin/bash ctf
-RUN echo "ctf:ctf" | chpasswd
+# Instalación de actualizaciones y Instala OpenSSH server
+RUN apt-get update \
+    && apt-get update && apt-get install -y openssh-server
 
-WORKDIR /home/ctf
+#Permite autenticación con contraseña y cambio de contraseá a root
+RUN mkdir /var/run/sshd
+RUN echo "root:ctf" | chpasswd
+RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' \
+    /etc/ssh/sshd_config
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional \
+    pam_loginuid.so@g' -i /etc/pam.d/sshd
 
-COPY system_health_check .
-COPY flag .
-COPY ynetd .
+# Establece el directorio de trabajo
+WORKDIR /root
 
-RUN chown -R root:root /home/ctf
+# Copia el archivo flag.txt en el contenedor
+COPY flag.txt .
 
-USER ctf
-EXPOSE 1024
-CMD ./ynetd -p 1024 ./system_health_check
+# Establece el usuario a ctf y expone el puerto 22
+EXPOSE 22
+
+# Ejecuta el servidor SSH
+CMD ["/usr/sbin/sshd", "-D"]
