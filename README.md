@@ -44,7 +44,8 @@ Para poder hacer uso del proyecto es necesario tener instalado docker en el sist
 
 ```
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt install -y docker.io docker-compose
+sudo systemctl enable docker --now
 ```
 
 ## 🚀 Deployment <a name = "deployment"></a>
