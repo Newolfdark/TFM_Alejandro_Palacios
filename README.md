@@ -30,7 +30,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Este proyecto se ha desarroyado como Trabajo Final de Master por la Universidad Internacional de Valencia.
+Este proyecto se ha desarrollado como Trabajo Final de Master por la Universidad Internacional de Valencia.
 
 En proyecto constará de una serie de retos divididos en diversos contenedores. Para cada reto se le asignara una o varias flags y una seríe de pistas para guiar en caso de atasco.
 
@@ -40,7 +40,7 @@ Estas instrucciones ayudarán al despliegue del proyecto mirar las notas de [dep
 
 ### Prerequisites
 
-Para poder hacer uso del proyecto es necesario tener instalador docker en el sistema.
+Para poder hacer uso del proyecto es necesario tener instalado docker en el sistema.
 
 ```
 sudo apt-get update
