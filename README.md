@@ -72,6 +72,14 @@ docker images
 ```
 Si tenemos contenedores con el "status" en "running" significa que se puede continuar con los retos CTF en caso contrario revisar la instalación.
 
+### Borrar todos los contenedores e imagenes generadas
+
+```
+docker rm $(docker ps -aq) -f
+docker rmi $(docker images -q)
+```
+
+
 ## 🎈 Usage <a name="usage"></a>
 
 Una vez instalado el proyecto y puesto en marcha la idea es intentar conseguir todas las "flags" posibles mediante nuestras habilidades de "hacking". Para ello se pueden usar las distitas Ips de los contenedores, voy a dejar un esquema indicando las ips de los diferentes contenedores y su título.

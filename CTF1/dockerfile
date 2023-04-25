@@ -4,7 +4,7 @@ FROM ubuntu:20.04
 RUN apt-get update \
     && apt-get update && apt-get install -y openssh-server
 
-#Permite autenticación con contraseña y cambio de contraseá a root
+#Permite autenticación con contraseña y cambio de contraseña a root
 RUN mkdir /var/run/sshd
 RUN echo "root:strawberry" | chpasswd
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' \
