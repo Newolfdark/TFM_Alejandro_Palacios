@@ -1,0 +1,32 @@
+FROM ubuntu:20.04
+
+# Actualizamos el sistema e instalamos el servidor de NFS
+RUN apt-get update && apt-get install -y nfs-kernel-server rpcbind
+
+# Iniciar el servicio rpcbind
+RUN service rpcbind start
+
+# Iniciar el servicio nfs
+RUN service nfs-kernel-server start
+
+# Creamos el directorio que vamos a compartir
+RUN mkdir -p /srv/nfs/shared
+
+# Asignamos permisos para que cualquier usuario pueda acceder a la carpeta compartida
+RUN chmod 777 /srv/nfs/shared
+RUN chmod 777 /proc/fs/nfsd
+
+# Configuramos el archivo de configuración del servidor NFS
+RUN echo "/srv/nfs/shared *(rw,sync,no_subtree_check,no_root_squash)" >> /etc/exports
+
+# Copiamos el script de inicio del servidor NFS
+COPY nfs-server.sh /
+
+# Le damos permisos de ejecución al script
+RUN chmod +x /nfs-server.sh
+
+# Exponemos el puerto utilizado por el servidor NFS
+EXPOSE 2049
+
+# Ejecutamos el script de inicio del servidor NFS
+CMD ["/nfs-server.sh"]

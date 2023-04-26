@@ -7,7 +7,7 @@ networks:
         - subnet: 172.10.10.0/24
 
 services:
-  mi_contenedor:
+  1ctf:
     build:
       context: ./CTF1
       dockerfile: dockerfile
@@ -15,6 +15,20 @@ services:
     networks:
       mi_subnet:
         ipv4_address: 172.10.10.2
+
+  2ctf:
+    build:
+      context: ./CTF2
+      dockerfile: dockerfile
+    container_name: ctf2
+    networks:
+      mi_subnet:
+        ipv4_address: 172.10.10.3
+    cap_add:
+      - SYS_ADMIN
+    devices:
+      - /dev/fuse
+    privileged: true
 
   portainer:
     image: portainer/portainer-ce:latest

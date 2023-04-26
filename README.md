@@ -48,6 +48,18 @@ sudo apt install -y docker.io docker-compose
 sudo systemctl enable docker --now
 ```
 
+Para quen el contenedor que tiene la imagen de nfs funcione correctamente nuestro equipo ha de tener un kernel compatible con nfs una forma muy sencilla de comprobarlo es mediante la instrucción:
+
+```
+grep NFSD /boot/config-$(uname -r)
+```
+
+Si la salida del comando incluye la línea CONFIG_NFSD=m o CONFIG_NFSD=y, entonces el kernel tiene soporte para NFS. En caso contrario podemos instalar la funcionalidad de nfs mediante la instrucción:
+
+```
+sudo apt-get install nfs-kernel-server
+```
+
 ## 🚀 Deployment <a name = "deployment"></a>
 
 Para tener el proyecto en el sistema tan solo hay que estar en el directorio del repositorio y ejecutar el docker-composer
