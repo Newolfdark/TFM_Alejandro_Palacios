@@ -1,8 +1,4 @@
-# Usa una imagen base de Apache
-FROM httpd:2.4
+FROM php:8.0-apache
 
-# Copia los archivos de configuración personalizados a la imagen
-COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
-
-# Copia tu contenido web al directorio predeterminado de Apache
-COPY ./index.html /usr/local/apache2/htdocs/
+COPY ./src/ /var/www/html
+RUN chown -R www-data:www-data /var/www/html
