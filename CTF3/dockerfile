@@ -1,0 +1,10 @@
+FROM dperson/samba:latest
+
+# Copiar el archivo de configuración smb.conf en el directorio temporal del contenedor
+COPY smb.conf /etc/samba/smb.conf
+
+# Copiar el archivo de correo con la flag en el directorio compartido de Samba
+COPY flag.txt /var/lib/samba/public/flag.txt
+
+# Establecer los permisos para el archivo de correo
+RUN chmod 644 /var/lib/samba/public/flag.txt
