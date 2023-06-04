@@ -5,12 +5,12 @@ if (isset($_POST['submit']) && isset($_POST['user_email'])) {
     $email = $_POST['user_email'];
 
     // Detectar el ataque de XSS
-    if (strpos($email, '<script>alert(\'xss\')</script>') !== false) {
+    if (strpos($email, "<script>alert('xss')</script>") !== false) {
         $flag = "Felicidades ¡Has encontrado la flag!: Th1s_Is_n0t_A_Fl4g";
         echo $flag;
         // Puedes tomar otras medidas, como registrar el ataque o bloquear al usuario.
     }
-    if (strpos($email, '<script>alert(\'XSS\')</script>') !== false) {
+    if (strpos($email, "<script>alert('XSS')</script>") !== false) {
         $flag = "Felicidades ¡Has encontrado la flag!: Th1s_Is_n0t_A_Fl4g";
         echo $flag;
         // Puedes tomar otras medidas, como registrar el ataque o bloquear al usuario.
@@ -54,6 +54,5 @@ if (isset($_POST['submit']) && isset($_POST['user_email'])) {
             </div>
         <?php endif; ?>
     </div>
-    <script type="text/javascript" src="../static/bootstrap.min.js"></script>
 </body>
 </html>
