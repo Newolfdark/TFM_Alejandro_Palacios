@@ -37,22 +37,25 @@ services:
   4ctf:
     container_name: ctf4
     build:
-        context: ./CTF4
-        dockerfile: dockerfile
+      context: ./CTF4/
+      dockerfile: dockerfile
     depends_on:
-        - db
+      - db
     networks:
       mi_subnet:
-        ipv4_address: 172.10.10.5
+        ipv4_address: 172.10.10.6
+
   db:
-    container_name: db
+    container_name: ctf4_db
     image: mysql
     restart: always
     environment:
-        MYSQL_ROOT_PASSWORD: mysqldocker4ctf
-        MYSQL_DATABASE: guardians_of_galaxy
-        MYSQL_USER: mysqldocker
-        MYSQL_PASSWORD: mysqldocker4ctf
+      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: MYSQL_DATABASE
+      MYSQL_USER: MYSQL_USER
+      MYSQL_PASSWORD: MYSQL_PASSWORD
+    volumes:
+      - ./CTF4/sql/database.sql:/docker-entrypoint-initdb.d/database.sql
     networks:
       mi_subnet:
         ipv4_address: 172.10.10.20
