@@ -34,6 +34,29 @@ services:
       mi_subnet:
         ipv4_address: 172.10.10.4
 
+  4ctf:
+    container_name: ctf4
+    build:
+        context: ./CTF4
+        dockerfile: dockerfile
+    depends_on:
+        - db
+    networks:
+      mi_subnet:
+        ipv4_address: 172.10.10.5
+  db:
+    container_name: db
+    image: mysql
+    restart: always
+    environment:
+        MYSQL_ROOT_PASSWORD: mysqldocker4ctf
+        MYSQL_DATABASE: guardians_of_galaxy
+        MYSQL_USER: mysqldocker
+        MYSQL_PASSWORD: mysqldocker4ctf
+    networks:
+      mi_subnet:
+        ipv4_address: 172.10.10.20
+
   portainer:
     image: portainer/portainer-ce:latest
     container_name: portainer

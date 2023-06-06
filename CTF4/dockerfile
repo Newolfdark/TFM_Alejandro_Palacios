@@ -1,0 +1,13 @@
+FROM php:8.0-apache
+
+# Instalar extensiones de PHP necesarias
+RUN docker-php-ext-install mysqli pdo_mysql
+
+# Copiar archivos de configuración personalizados
+COPY ./src/ /var/www/html
+
+# Configurar el directorio de trabajo
+WORKDIR /var/www/html
+
+# Exponer el puerto 80 para el servidor web Apache
+EXPOSE 80
