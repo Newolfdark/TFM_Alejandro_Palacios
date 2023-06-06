@@ -102,7 +102,7 @@ docker rmi $(docker images -q)
 
 Una vez instalado el proyecto y puesto en marcha, la idea es intentar conseguir todas las "flags" posibles mediante nuestras habilidades de "hacking". Para ello se pueden usar las distintas IPs de los contenedores, voy a dejar un esquema indicando las IPs de los diferentes contenedores y su título.
 
-<img width=300px height=450px src="./Images/docker.png" alt="Project logo"></a>
+<img width=600px height=450px src="./Images/docker.png" alt="Project logo"></a>
 
 ## 👨‍🏭 TODO <a name = "built_using"></a>
 
