@@ -30,9 +30,20 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Este proyecto se ha desarrollado como Trabajo Final de Master por la Universidad Internacional de Valencia.
+Este proyecto se ha desarrollado como Trabajo Final de Máster por la Universidad Internacional de Valencia.
 
-En proyecto constará de una serie de retos divididos en diversos contenedores. Para cada reto se le asignara una o varias flags y una seríe de pistas para guiar en caso de atasco.
+En proyecto constará de una serie de retos divididos en diversos contenedores. Para cada reto se le asignará una o varias flags y una serie de pistas para guiar en caso de atasco.
+
+En todo caso queda prohibida la visualización de código de los dockerfiles, ya que los retos perderían todo el sentido (Pero solo los ficheros de este repositorio, los diferentes códigos html si que se pueden visualizar a través del navegador u otras herramientas como Burpsuite).
+
+Por ahora los retos disponibles son:
+
+- CTF1: Se trata de un docker que contiene un servidor SSH poco seguro...
+- CTF2: Es posible que tenga un servidor apache y tenga un web dudosa...
+- CTF3: Hay un posible SMB con información de fácil acceso...
+- CTF4: Un servidor apache con un panel de inicio de sesión con dudosa fiabilidad...
+
+¡Espero que os gusten!
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -69,7 +80,7 @@ docker-composer up -d
 
 ## 🔧 Running the tests <a name = "tests"></a>
 
-Para hacer pruebas de que se ha instalado correctamente podemos ver si se han generado contenedores o imagenes.
+Para hacer pruebas de que se ha instalado correctamente podemos ver si se han generado contenedores o imágenes.
 
 ### Comprobar si se han generado Contenedores o imagenes
 
@@ -89,13 +100,13 @@ docker rmi $(docker images -q)
 
 ## 🎈 Usage <a name="usage"></a>
 
-Una vez instalado el proyecto y puesto en marcha la idea es intentar conseguir todas las "flags" posibles mediante nuestras habilidades de "hacking". Para ello se pueden usar las distitas Ips de los contenedores, voy a dejar un esquema indicando las ips de los diferentes contenedores y su título.
+Una vez instalado el proyecto y puesto en marcha, la idea es intentar conseguir todas las "flags" posibles mediante nuestras habilidades de "hacking". Para ello se pueden usar las distintas IPs de los contenedores, voy a dejar un esquema indicando las IPs de los diferentes contenedores y su título.
 
 <img width=300px height=450px src="./Images/docker.png" alt="Project logo"></a>
 
 ## 👨‍🏭 TODO <a name = "built_using"></a>
 
-Creación de los retos 4 y 5 antes de la siguiente reunión de proyecto.
+Creación del 5 y ampliación del reto 2.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -108,6 +119,8 @@ Creación de los retos 4 y 5 antes de la siguiente reunión de proyecto.
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-- Stackoverflow
+- https://stackoverflow.com
 - https://github.com/moeinfatehi/xss_vulnerability_challenges
 - https://hub.docker.com/r/dperson/samba
+- https://www.section.io/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/
+- https://github.com/thomaslaurenson/startrek_payroll/tree/main
