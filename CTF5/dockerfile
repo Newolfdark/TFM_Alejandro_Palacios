@@ -1,0 +1,26 @@
+# Usamos la imagen base Ubuntu:20.04
+FROM ubuntu:20.04
+
+# Actualizamos el sistema e instalamos vsftpd
+RUN apt-get update && \
+    apt-get install -y vsftpd
+
+# Configuramos el directorio raíz del usuario anónimo
+RUN mkdir -p /var/ftp && \
+    chown -R ftp:ftp /var/ftp && \
+    chmod 555 /var/ftp
+
+# Crear el directorio secure_chroot_dir
+RUN mkdir -p /var/run/vsftpd/empty && \
+    chmod 555 /var/run/vsftpd/empty
+
+COPY flag.txt /var/ftp/flag.txt
+
+# Copiamos el archivo de configuración modificado al contenedor
+COPY vsftpd.conf /etc/vsftpd.conf
+
+# Exponemos el puerto 21 para las conexiones FTP
+EXPOSE 21
+
+# Iniciamos el servidor FTP
+CMD ["/usr/sbin/vsftpd", "/etc/vsftpd.conf"]

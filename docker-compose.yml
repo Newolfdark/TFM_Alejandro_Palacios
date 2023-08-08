@@ -60,6 +60,15 @@ services:
       mi_subnet:
         ipv4_address: 172.10.10.20
 
+  5ctf:
+    container_name: ctf5
+    build:
+      context: ./CTF5/
+      dockerfile: dockerfile
+    networks:
+      mi_subnet:
+        ipv4_address: 172.10.10.7
+
   portainer:
     image: portainer/portainer-ce:latest
     container_name: portainer
