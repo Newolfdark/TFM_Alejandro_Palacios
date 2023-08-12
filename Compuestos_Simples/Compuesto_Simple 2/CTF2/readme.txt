@@ -1,0 +1,1 @@
+juanito recuerda que el id_rsa ha de ser un docummento altamente confidencial. Es un fallo de seguridad que nos puede suponer una gran brecha.

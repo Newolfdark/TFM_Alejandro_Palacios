@@ -1,0 +1,35 @@
+FROM ubuntu:20.04
+
+# Instalación de actualizaciones y OpenSSH server
+RUN apt-get update \
+    && apt-get update && apt-get install -y openssh-server
+
+# Agregar usuario "juanito" al archivo /etc/passwd con contraseña "strawberri"
+RUN echo 'juanito:x:1000:1000::/home/juanito:/bin/bash' >> /etc/passwd \
+    && echo 'juanito:C0nTraSeÑaSegURa1032?¿' | chpasswd
+
+# Permitir autenticación con contraseña y cambiar contraseña de juanito
+RUN mkdir /var/run/sshd
+RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/' \
+    /etc/ssh/sshd_config
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional \
+    pam_loginuid.so@g' -i /etc/pam.d/sshd
+
+# Establecer directorio de trabajo
+WORKDIR /home/juanito
+
+# Copiar el archivo flag.txt en el contenedor
+COPY flag.txt .
+
+# Copiar tu clave id_rsa dentro del contenedor
+COPY id_rsa.pub /home/juanito/.ssh/authorized_keys
+
+# Cambiar los permisos de la clave
+RUN chown 1000:1000 /home/juanito/.ssh/authorized_keys \
+    && chmod 600 /home/juanito/.ssh/authorized_keys
+
+# Exponer el puerto 22
+EXPOSE 22
+
+# Ejecutar el servidor SSH
+CMD ["/usr/sbin/sshd", "-D"]
