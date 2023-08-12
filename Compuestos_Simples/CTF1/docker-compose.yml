@@ -1,0 +1,26 @@
+version: '3.8'
+
+networks:
+  mi_subnet:
+    ipam:
+      config:
+        - subnet: 172.10.10.0/24
+
+services:
+  1ctf:
+    build:
+      context: ./CTF1
+      dockerfile: dockerfile
+    container_name: ctf1
+    networks:
+      mi_subnet:
+        ipv4_address: 172.10.10.2
+
+  2ctf:
+    build:
+      context: ./CTF2
+      dockerfile: dockerfile
+    container_name: ctf2
+    networks:
+      mi_subnet:
+        ipv4_address: 172.10.10.3
