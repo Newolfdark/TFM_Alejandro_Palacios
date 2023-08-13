@@ -1,0 +1,1 @@
+Buenas! te he dejado un mensaje cifrado en el servidor, también te he dejado la clave para que lo descifres. Recuerda que siempre usamos el mismo algoritmo de clave privada para encriptar y que la clave es de 256 bits. Un saludo y no la lies más! jajaja.
