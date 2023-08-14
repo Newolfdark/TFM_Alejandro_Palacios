@@ -87,6 +87,15 @@ services:
       mi_subnet:
         ipv4_address: 172.10.10.9
 
+  8ctf:
+    container_name: ctf8
+    build:
+      context: ./CTF8/
+      dockerfile: dockerfile
+    networks:
+      mi_subnet:
+        ipv4_address: 172.10.10.10
+
   portainer:
     image: portainer/portainer-ce:latest
     container_name: portainer
