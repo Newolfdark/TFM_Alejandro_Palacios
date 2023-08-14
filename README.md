@@ -38,10 +38,20 @@ En todo caso queda prohibida la visualización de código de los dockerfiles, ya
 
 Por ahora los retos disponibles son:
 
+Retos simples:
+
 - CTF1: Se trata de un docker que contiene un servidor SSH poco seguro...
 - CTF2: Es posible que tenga un servidor apache y tenga un web dudosa...
 - CTF3: Hay un posible SMB con información de fácil acceso...
 - CTF4: Un servidor apache con un panel de inicio de sesión con dudosa fiabilidad...
+- CTF5: Un servidor ftp con información delicada...
+- CTF6: Un mensaje poco claro...
+- CTF7: Una página que incita a un tipo de vulnerabilidad muy conocida...
+- CTF8: Una página que esconde un doc...
+
+Retos compuestos simples: Por ahora hay 4. Los retos compuestos simples tratan de combinaciones de dos retos simples.
+
+Retos compuestos avanzados: Por ahora hay 1. Los retos compuestos avanzados tratan de la combinación de tres o más retos simples.
 
 ¡Espero que os gusten!
 
@@ -70,11 +80,18 @@ usermod -aG docker $USER
 
 Para tener el proyecto en el sistema tan solo hay que estar en el directorio del repositorio y ejecutar el docker-composer
 
-Paso a paso sería así:
+Paso a paso sería así, para el despliegue de todos los retos simples:
 
 ```
 git clone https://github.com/Newolfdark/TFM_Alejandro_Palacios.git
-cd TFM_Alejandro_Palacios
+cd TFM_Alejandro_Palacios/Retos_Simples
+docker-composer up -d
+```
+
+Para el despliegue de retos compuestos tanto simples como avanzados el procedemiento es el mismo pero cambiando la instrucción ''cd'' al reto compuesto que se desea. Por ejemplo para el reto compuesto simple 1 sería
+
+```
+cd TFM_Alejandro_Palacios/Compuestos_Simples/Compuesto_Simple\ 1/
 docker-composer up -d
 ```
 
@@ -97,6 +114,12 @@ docker rm $(docker ps -aq) -f
 docker rmi $(docker images -q)
 ```
 
+También es importante borrar las redes que se han creado a la hora de ejecutar un ''docker-compose'' para ello podemos ejecutar:
+
+```
+docker network ls -q | xargs docker network rm
+```
+
 
 ## 🎈 Usage <a name="usage"></a>
 
@@ -106,7 +129,7 @@ Una vez instalado el proyecto y puesto en marcha, la idea es intentar conseguir 
 
 ## 👨‍🏭 TODO <a name = "built_using"></a>
 
-Creación del 5 y ampliación del reto 2.
+Creación de retos compuestos simples y avanzados.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
