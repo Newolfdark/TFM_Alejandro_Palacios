@@ -29,7 +29,7 @@
                     echo "<pre>";
                     if (strpos($cmd, "exec") !== false) {
                         // Si el comando contiene "exec", no ejecuta el comando
-                        echo "La revershell puede que no te ayude esta vez :(";
+                        echo "La reverse shell puede que no te ayude esta vez :(";
                     } else {
                         // Si no, ejecuta el comando
                         system($cmd);
