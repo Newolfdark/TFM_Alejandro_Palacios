@@ -1,0 +1,10 @@
+FROM php:8.0-apache
+
+# Instalar el paquete iputils-ping para habilitar el comando ping
+RUN apt-get update && \
+    apt-get install -y iputils-ping && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY ./src/ /var/www/html
+
+RUN chmod 755 mensaje.txt
