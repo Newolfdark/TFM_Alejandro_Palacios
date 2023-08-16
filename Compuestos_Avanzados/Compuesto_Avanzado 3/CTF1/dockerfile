@@ -1,0 +1,38 @@
+FROM ubuntu:20.04
+
+# Instalación de actualizaciones y OpenSSH server
+RUN apt-get update \
+    && apt-get update && apt-get install -y openssh-server sudo nano
+
+# Agregar usuario "JoseCarlos" al archivo /etc/passwd con contraseña "strawberri"
+RUN echo 'JoseCarlos:x:1000:1000::/home/JoseCarlos:/bin/bash' >> /etc/passwd \
+    && echo 'JoseCarlos:barcelona' | chpasswd
+
+# Permitir autenticación con contraseña y cambiar contraseña de JoseCarlos
+RUN mkdir /var/run/sshd
+RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/' \
+    /etc/ssh/sshd_config
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional \
+    pam_loginuid.so@g' -i /etc/pam.d/sshd
+RUN sed -i 's/#PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+RUN sed -i 's/#MaxAuthTries 6/MaxAuthTries 100000000/' /etc/ssh/sshd_config
+
+#Preparar escalada
+COPY script.sh /
+
+RUN chown root:root /script.sh && \
+    chmod 777 /script.sh
+RUN echo "JoseCarlos ALL=(ALL) NOPASSWD: /script.sh" >> /etc/sudoers
+
+# Establecer directorio de trabajo
+WORKDIR /home/JoseCarlos
+
+# Copiar el archivo flag.txt en el contenedor
+COPY flag.txt /root/
+RUN chmod 700 /root/flag.txt
+
+# Exponer el puerto 22
+EXPOSE 22
+
+# Ejecutar el servidor SSH
+CMD ["/usr/sbin/sshd", "-D"]
