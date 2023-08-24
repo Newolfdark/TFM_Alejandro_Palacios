@@ -1,1 +1,1 @@
-Fernandito, acuerdate que para iniciar sesión en tu cuenta pusiste la conteseña "Barman". Y acuerdate que el archivo "flag.txt" solo es visible por ti.
+He dejado por aquí la key, no te preocupes el mensaje cifrado lo he dejado en un lugar seguro.

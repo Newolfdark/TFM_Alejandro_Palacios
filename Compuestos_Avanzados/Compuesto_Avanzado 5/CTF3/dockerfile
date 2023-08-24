@@ -6,4 +6,4 @@ RUN apt-get update && \
 
 COPY ./src/ /var/www/html
 
-RUN chmod 755 flag.txt
+RUN chmod 755 mensaje.txt

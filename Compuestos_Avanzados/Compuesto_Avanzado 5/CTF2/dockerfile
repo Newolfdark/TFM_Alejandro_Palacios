@@ -7,9 +7,4 @@ RUN apt-get update && \
 
 COPY ./src/ /var/www/html
 
-RUN echo 'fernandito:x:1000:1000::/home/fernandito:/bin/bash' >> /etc/passwd \
-    && echo 'fernandito:Barman' | chpasswd
-
-RUN groupadd fernandito && \
-    chown fernandito:fernandito flag.txt && \
-    chmod 600 flag.txt
+RUN chmod 755 key.txt

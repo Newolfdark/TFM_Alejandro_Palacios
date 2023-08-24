@@ -4,7 +4,7 @@ networks:
   mi_subnet:
     ipam:
       config:
-        - subnet: 172.12.10.0/24
+        - subnet: 172.15.10.0/24
 
 services:
   1ctf:
@@ -14,7 +14,7 @@ services:
     container_name: ctf1
     networks:
       mi_subnet:
-        ipv4_address: 172.12.10.2
+        ipv4_address: 172.15.10.2
 
   2ctf:
     build:
@@ -23,4 +23,13 @@ services:
     container_name: ctf2
     networks:
       mi_subnet:
-        ipv4_address: 172.12.10.3
+        ipv4_address: 172.15.10.3
+
+  3ctf:
+    build:
+      context: ./CTF3
+      dockerfile: dockerfile
+    container_name: ctf3
+    networks:
+      mi_subnet:
+        ipv4_address: 172.15.10.4
