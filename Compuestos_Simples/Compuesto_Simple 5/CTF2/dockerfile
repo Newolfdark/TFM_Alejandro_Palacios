@@ -1,0 +1,9 @@
+FROM php:8.0-apache
+
+# Instalar el paquete iputils-ping y whois
+RUN apt-get update && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY ./src/ /var/www/html
+
+RUN chmod 755 flag.txt
