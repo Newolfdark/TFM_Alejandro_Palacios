@@ -112,7 +112,7 @@ services:
       dockerfile: dockerfile
     networks:
       mi_subnet:
-        ipv4_address: 172.10.10.11
+        ipv4_address: 172.10.10.12
 
   portainer:
     image: portainer/portainer-ce:latest
